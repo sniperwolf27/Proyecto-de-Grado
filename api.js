@@ -1,124 +1,62 @@
-// Cargar las variables de entorno
-const express = require('express');
-const sql = require('mssql');
-require('dotenv').config(); 
+// Definimos la url base
+const baseURL = "https://gtfs-restapi-production.up.railway.app";
 
-// Configuración de la conexión a la base de datos
-const dbConfig = {
-  server: process.env.DB_SERVER,
-  database: process.env.DB_DATABASE,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  options: {
-    encrypt: true, // Si estás utilizando Azure, asegúrate de habilitar la encriptación
-  },
-};
+// Función para descargar un archivo .json
+function downloadJSON(jsonData, fileName) {
+  let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonData));
+  let downloadAnchorNode = document.createElement('a');
+  downloadAnchorNode.setAttribute("href", dataStr);
+  downloadAnchorNode.setAttribute("download", fileName + ".json");
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
+}
 
-// Crear una instancia de la aplicación Express
-const app = express();
-
-// Establecer la conexión con la base de datos
-sql.connect(dbConfig)
-  .then(() => {
-    console.log('Conexión establecida con la base de datos');
+// Realizamos una petición a la ruta /routes
+fetch(baseURL + '/routes')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error de red');
+    }
+    return response.json();
   })
-  .catch((error) => {
-    console.error('Error al conectar a la base de datos:', error);
+  .then(data => {
+    // Descargamos el archivo .json con el nombre 'routes'
+    downloadJSON(data, 'routes');
+  })
+  .catch(error => console.error('Hubo un problema con tu operación fetch: ', error));
+
+  $(document).ready(function() {
+    const apiUrl = 'https://gtfs-restapi-production.up.railway.app/';
+  
+    $('#entitySelect').on('change', function() {
+      const endpoint = $(this).val();
+      fetch(apiUrl + endpoint)
+        .then(response => response.json())
+        .then(data => {
+          const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+          $('#download-button').attr('href', dataStr);
+          $('#download-button').attr('download', `${endpoint}.json`);
+          $('#download-button').show();
+        })
+        .catch(err => {
+          $('#message-container').text(`Error: ${err.message}`);
+        });
+    });
   });
 
-// Definir una ruta para obtener todas las rutas disponibles
-app.get('/routes', (req, res) => {
-  // Ejecutar una consulta SQL para obtener las rutas
-  const query = 'SELECT * FROM Routes';
+  function downloadJson() {
+    var entity = document.getElementById("entitySelect").value;
+    var data = ""; // Aquí debes reemplazar por la función que genera los datos .json en función del valor de 'entity'.
+    var filename = entity + ".json";
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
 
-  new sql.Request().query(query)
-    .then((result) => {
-      // Enviar la respuesta con los datos obtenidos
-      res.json(result.recordset);
-    })
-    .catch((error) => {
-      console.error('Error al ejecutar la consulta:', error);
-      res.status(500).send('Error interno del servidor');
-    });
-});
-
-app.get('/agency', (req, res) => {
-  // Ejecutar una consulta SQL para obtener las rutas
-  const query = 'SELECT * FROM agency';
-
-  new sql.Request().query(query)
-    .then((result) => {
-      // Enviar la respuesta con los datos obtenidos
-      res.json(result.recordset);
-    })
-    .catch((error) => {
-      console.error('Error al ejecutar la consulta:', error);
-      res.status(500).send('Error interno del servidor');
-    });
-});
-
-app.get('/trip', (req, res) => {
-  // Ejecutar una consulta SQL para obtener las rutas
-  const query = 'SELECT * FROM trips';
-
-  new sql.Request().query(query)
-    .then((result) => {
-      // Enviar la respuesta con los datos obtenidos
-      res.json(result.recordset);
-    })
-    .catch((error) => {
-      console.error('Error al ejecutar la consulta:', error);
-      res.status(500).send('Error interno del servidor');
-    });
-});
-app.get('/calendar', (req, res) => {
-  // Ejecutar una consulta SQL para obtener las rutas
-  const query = 'SELECT * FROM calendar';
-
-  new sql.Request().query(query)
-    .then((result) => {
-      // Enviar la respuesta con los datos obtenidos
-      res.json(result.recordset);
-    })
-    .catch((error) => {
-      console.error('Error al ejecutar la consulta:', error);
-      res.status(500).send('Error interno del servidor');
-    });
-});
-
-app.get('/stop', (req, res) => {
-  // Ejecutar una consulta SQL para obtener las rutas
-  const query = 'SELECT * FROM stop';
-
-  new sql.Request().query(query)
-    .then((result) => {
-      // Enviar la respuesta con los datos obtenidos
-      res.json(result.recordset);
-    })
-    .catch((error) => {
-      console.error('Error al ejecutar la consulta:', error);
-      res.status(500).send('Error interno del servidor');
-    });
-});
-
-app.get('/stop_times', (req, res) => {
-  // Ejecutar una consulta SQL para obtener las rutas
-  const query = 'SELECT * FROM stop_times';
-
-  new sql.Request().query(query)
-    .then((result) => {
-      // Enviar la respuesta con los datos obtenidos
-      res.json(result.recordset);
-    })
-    .catch((error) => {
-      console.error('Error al ejecutar la consulta:', error);
-      res.status(500).send('Error interno del servidor');
-    });
-});
-// Iniciar el servidor
-app.listen(3000, () => {
-  console.log('Servidor API iniciado en el puerto 3000');
-});
-
-
-
+function getData() {
+    document.getElementById("downloadBtn").style.display = "block"; // Esto mostrará el botón de descarga cuando se elija una opción del selector.
+}
