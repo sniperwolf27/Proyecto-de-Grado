@@ -1,25 +1,4 @@
-/*===============Propiedades Globales================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-}
-
-
-/*===================MENU==========================*/
-
- #menu a, button{
-     font-size: 18px !important;
-     font-weight: 600;
-    
- }
-
- #menu a{
-     color:#3f3f3f;
-     
- }
 /*===================SLIDER DE IMAGENES==========================*/
 
 .carousel-inner img {
@@ -97,41 +76,6 @@ body {
     background-color: #1b2a4e;
     min-height:500px;
     position:relative;
-}
-
-/*=========================CONTACTOS FORMULARIO================================*/
-
-#contenedor-formulario{
-    position:absolute;
-    top:30%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    background: #fbfafa;
-    border-radius:5px;
-    
-}
-
-#titulo-formulario {
-    color: #3f3f3f;
-}
-
-
-
-
-/*=========================FOOTER================================*/
-
-footer {
-    background: #1b2a4e;
-    min-height: 100px;;
-}
-footer p{
-    color:#f3f3f3;
-    text-align:center;
-}
-#iconos  i {
-    font-size: 26px;
-    padding: 0 8px;
-    color:#f3f3f3;
 }
 
 /*=========================MEDIA QUERIES PANTALLA ANCHA================================*/
@@ -251,3 +195,122 @@ form {
     border-color: #1e7e34;
   }
   
+  /*===============Propiedades Globales================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/*===================MENU==========================*/
+
+ #menu a, button{
+     font-size: 18px !important;
+     font-weight: 600;
+    
+ }
+
+ #menu a{
+     color:#3f3f3f;
+     
+ }
+
+/*===================FORMULARIO================================*/
+
+#contenedor-formulario {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    padding: 20px;
+    background-color: #fbfafa;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contenedor-formulario form {
+    background-color: #fbfafa;
+}
+
+#contenedor-formulario form .form-control {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc;
+}
+
+#contenedor-formulario form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+#contenedor-formulario form .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+#contenedor-formulario form .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+#contenedor-formulario form .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+#contenedor-formulario form .btn-download {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el selector de entidad */
+#contenedor-formulario form .form-select {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#contenedor-formulario form .form-select:focus {
+    border-color: #007bff;
+    box-shadow: none;
+}
+
+/*===================FOOTER================================*/
+
+footer {
+    background: #1b2a4e;
+    min-height: 100px;;
+}
+footer p{
+    color:#f3f3f3;
+    text-align:center;
+}
+#iconos  i {
+    font-size: 26px;
+    padding: 0 8px;
+    color:#f3f3f3;
+}
+
+/* Estilos para el botón de descarga */
+#contenedor-formulario form .btn-download {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fbfafa;
+    margin-bottom: 20px;
+}
+
+#contenedor-formulario form .btn-download:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    color: #fbfafa;
+}
+
