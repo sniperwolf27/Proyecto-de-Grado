@@ -41,3 +41,40 @@ if (selectElement) {
 } else {
   console.error('Elemento entitySelect no encontrado en el documento.');
 }
+
+
+  function getData() {
+    var selectElement = document.getElementById("entitySelect");
+    var selectedOption = selectElement.value;
+    var downloadBtn = document.getElementById("downloadBtn");
+
+    // Asigna el nombre del botón de descarga según la opción seleccionada
+    switch (selectedOption) {
+      case "agency":
+        downloadBtn.textContent = "Descargar Agencia";
+        break;
+      case "routes":
+        downloadBtn.textContent = "Descargar Rutas";
+        break;
+      case "trips":
+        downloadBtn.textContent = "Descargar Viajes";
+        break;
+      case "stop_times":
+        downloadBtn.textContent = "Descargar Tiempos de Parada";
+        break;
+      case "calendar":
+        downloadBtn.textContent = "Descargar Calendario";
+        break;
+      default:
+        downloadBtn.textContent = "Descargar";
+        break;
+    }
+
+    // Muestra u oculta el botón de descarga según la opción seleccionada
+    if (selectedOption === "calendar") {
+      downloadBtn.style.display = "inline-block";
+    } else {
+      downloadBtn.style.display = "none";
+    }
+  }
+
