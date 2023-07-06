@@ -71,7 +71,7 @@
 } 
 
  #seccion-contacto{
-    background-color: #1b2a4e;
+    background-color: #222831;
     min-height:500px;
     position:relative;
 }
@@ -203,7 +203,7 @@ form {
 /*===============Propiedades Globales================*/
 
 :root {
-    --main-background: #F9F5EB;
+    --main-background: #EEEEEE;
     --secondary-background: #E4DCCF;
     --main-color: #00ADB5;
     --dark-color: #002B5B;
@@ -241,10 +241,6 @@ body {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-}
-
-#contenedor-formulario form {
-    /* background-color: var(--main-background); */
 }
 
 #contenedor-formulario form .form-control {
@@ -295,7 +291,7 @@ body {
 /*===================FOOTER================================*/
 
 footer {
-    background: var(--secondary-background);
+    background: #EEEEEE ;
     min-height: 100px;;
 }
 
@@ -331,4 +327,13 @@ footer p{
 section#mapeo-rutas {
     background: #EEEEEE;
     padding: 70px 0 !important;
+}
+.title-top{
+    color: var(--main-color)!important;
+}
+.main-text{
+    color : #393E46
+}
+.secondary-title{
+    color: #222831;
 }

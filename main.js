@@ -7,20 +7,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     switch (selectedOption) {
       case "agency":
-        downloadBtn.textContent = "Descargar Agencia";
+        downloadBtn.textContent = "Descargar agency.json";
         break;
       case "routes":
-        downloadBtn.textContent = "Descargar Rutas";
+        downloadBtn.textContent = "Descargar routes.json";
         break;
       case "trips":
-        downloadBtn.textContent = "Descargar Viajes";
+        downloadBtn.textContent = "Descargar trips.json";
         break;
       case "stop_times":
-        downloadBtn.textContent = "Descargar Tiempos de Parada";
+        downloadBtn.textContent = "Descargar stop_times.json";
         break;
       case "calendar":
-        downloadBtn.textContent = "Descargar Calendario";
+        downloadBtn.textContent = "Descargar calendar.json";
         break;
+        case "stops":
+          downloadBtn.textContent = "Descargar stops.json";
+          break;
       default:
         downloadBtn.textContent = "Descargar";
         break;

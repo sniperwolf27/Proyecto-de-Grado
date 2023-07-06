@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>WayFinder</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title class="title-top">WayFinder</title>
   </head>
   <body>
   <!--========================================================== -->
@@ -26,7 +27,7 @@
     <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
         <div class="container">
           <a class="navbar-brand" href="">
-              <span class="fs-5 text-primary fw-bold">WayFinder</span>
+              <span class="fs-5 fw-bold title-top">WayFinder</span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -53,7 +54,8 @@
                         <!-- SLIDER DE IMAGENES-->
     <!--========================================================== -->
    
-    <div id="carousel" class="carousel slide carousel-custom" data-bs-ride="carousel">
+    <div id="carousel" class="carousel slide carousel-custom" data-bs-ride="carousel" data-aos="fade-up"
+     data-aos-duration="2000">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="3000">
             <img src="pics/dedo.jpg" class="d-block w-100" alt="">
@@ -89,9 +91,9 @@
 
 
     <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
-    <h1 class="p-3 fs-2 border-bottom border-3">Build smarter transit apps with Wayfinder's comprehensive data<span class="text-primary"> InnoTechrate<span/></h1>
-     <p class="p-3  fs-4">
-         <span class="text-primary">Wayfinder</span> la plataforma para desarrolladores de aplicaciones de transporte público más poderosa
+    <h1 class="p-3 fs-2 border-bottom border-3 secondary-title">Build smarter transit apps with Wayfinder's comprehensive data<span class="title-top"> InnoTechrate<span/></h1>
+     <p class="p-3  fs-4 secondary-title">
+         <span class="title-top">Wayfinder</span> la plataforma para desarrolladores de aplicaciones de transporte público más poderosa
 
 
         
@@ -105,42 +107,46 @@
 
 <section class="w-100">
     <div class="row w-75 mx-auto" id="servicios-fila-1">       
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center my-5 icono-wrap">
-            <img src="pics/code.png" alt="desarrollo"   width="180" height="160">
+        <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center my-5 icono-wrap ">
+            <img src="pics/code.png" alt="desarrollo"   width="180" height="160" data-aos="fade-up"
+            data-aos-duration="2000">
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1">Desarrollo de aplicaciones</h3>
-                <p class="px-4">Fuente rica de información para desarrolladores de aplicaciones</p>
+                <h3 class="fs-5 mt-4 px-4 pb-1 secondary-title">Desarrollo de aplicaciones</h3>
+                <p class="px-4 main-text">Fuente rica de información para desarrolladores de aplicaciones</p>
             </div>
 
         </div>
 
         <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center  my-5 icono-wrap">
-            <img src="pics/integracion-de-datos.png" alt="concepto" width="180" height="160">
+            <img src="pics/integracion-de-datos.png" alt="concepto" width="180" height="160" data-aos="fade-up"
+            data-aos-duration="3000">
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1 icono-wrap">Facíl integración</h3>
-                <p class="px-4"> Coordina diferentes medios de transporte para mayor conveniencia</p>
+                <h3 class="fs-5 mt-4 px-4 pb-1 icono-wrap secondary-title">Facíl integración</h3>
+                <p class="px-4 main-text"> Coordina diferentes medios de transporte para mayor conveniencia</p>
             </div>
         </div>   
     </div>
     
     <div class="row w-75 mx-auto mb-5" id="servicios-fila-2">       
         <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center  my-5 icono-wrap">
-            <img src="pics/navegador.png" alt="comunicaciones" width="180" height="160">
+            <img src="pics/navegador.png" alt="comunicaciones" width="180" height="160" data-aos="fade-up"
+            data-aos-duration="3000">
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1">Reducción del trafíco</h3>
-                <p class="px-4">Fomenta el uso del transporte público</p>
+                <h3 class="fs-5 mt-4 px-4 pb-1 secondary-title">Reducción del trafíco</h3>
+                <p class="px-4 main-text">Fomenta el uso del transporte público</p>
             </div>
         </div>
 
         <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center my-5 icono-wrap">
-            <img src="pics/easy-access.png" alt="seo" width="180" height="160" >
+            <img src="pics/easy-access.png" alt="seo" width="180" height="160" data-aos="fade-up"
+            data-aos-duration="3000">
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1">Accesibilidad y eficiencia</h3>
-                <p class="px-4">Planifica viajes de transporte público de manera efectiva</p>
+                <h3 class="fs-5 mt-4 px-4 pb-1 secondary-title">Accesibilidad y eficiencia</h3>
+                <p class="px-4 main-text">Planifica viajes de transporte público de manera efectiva</p>
             </div>
         </div>   
     </div>
@@ -152,12 +158,13 @@
 
 <section id="mapeo-rutas" class="py-5">
     <div class="container w-50 m-auto text-center" id="equipo">
-        <h1 class="fs-2">Mapeo de las rutas de <span class="text-primary">SD</span></h1>
-        <p class="">A continuación se muestran, las rutas del tranporte público (carros públicos) <span class="text-primary">SD</span> en la herramienta <span class="text-primary">ARCGIS</span></p>
+        <h1 class="fs-2 secondary-title">Mapeo de las rutas de <span class="title-top">SD</span></h1>
+        <p class="main-text">A continuación se muestran, las rutas del tranporte público (carros públicos) <span class="title-top">SD</span> en la herramienta <span class="title-top">ARCGIS</span></p>
     </div>
 
     <div class="mt-5 text-center">
-        <img id="img-equipo" src="pics/rutas_sd.jpg" alt="equipo">
+        <img id="img-equipo" src="pics/rutas_sd.jpg" alt="equipo" data-aos="fade-up"
+        data-aos-duration="3000">
     </div>
 
 </section>
@@ -172,40 +179,41 @@
     <div class="col-12 col-sm-10 col-md-8 col-lg-12">
       <div class="container" id="contenedor-formulario">
         <div class="text-center mb-4" id="titulo-formulario">
-          <h2 class="text-white">Contactanos</h2>
+          <h2 class="text-white">Contact Us</h2>
         </div>
 
 
   <form method="POST" data-netlify="true" action="#">
 
       <div class= "mb-3">           
-        <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
       </div>
 
       <div class="mb-3">            
-        <input type="input" class="form-control" id="name" name="name" placeholder="John Doe">
+        <input type="input" class="form-control" id="name" name="name" placeholder="Juan Perez">
       </div>
 
       <div class="mb-3">
-        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Teléfono">
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone">
       </div>
 
       <div class="mb-3">       
-        <textarea class="form-control" name="message" id="message" rows="4"></textarea>
+        <textarea class="form-control" name="message" id="message" rows="4" placeholder="Tell us how we can help you"></textarea>
       </div>
 
       <div class="mb-3">
         <select class="form-select" id="entitySelect">
-          <option value="agency">Agencia</option>
-          <option value="routes">Rutas</option>
-          <option value="trips">Viajes</option>
-          <option value="stop_times">Tiempos de parada</option>
-          <option value="calendar">Calendario</option>
+          <option value="agency">Agency</option>
+          <option value="routes">Routes</option>
+          <option value="trips">Trips</option>
+          <option value="stops">Stops</option>
+          <option value="stop_times">Stop trips</option>
+          <option value="calendar">Calendar</option>
         </select>
-        <button type="button" id="downloadBtn" class="btn btn-download" style="display: none;">Descargar <i class="bi bi-download"></i></button>
+        <button type="button" id="downloadBtn" class="btn btn-download rounded fs-7" style="display: none;">Download<i></i></button>
     </div>
     
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Enviar Mensaje</button>
+        <button type="submit" class=" btn btn-primary w-100 fs-5">Send</button>
       </div>
       <div class="mb-3">
     </div>
@@ -220,7 +228,7 @@
 
 
 <footer class="w-100 d-flex align-items-center justify-content-center flex-wrap">
-  <p class="fs-5 px-3  pt-3">WayFinder. &copy; Todos Los Derechos Reservados 2021</p>
+  <p class="fs-5 px-3  pt-3 secondary-title">WayFinder. &copy; All Rights Reserved 2021</p>
   <div id="iconos" >
   <a href="https://github.com/sniperwolf27/Proyecto-de-Grado"><i class="bi bi-github"></i></a> 
   </div>
@@ -231,6 +239,10 @@
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
     <script src="./main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     
     
   </body>
