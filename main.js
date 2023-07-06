@@ -1,54 +1,10 @@
-const axios = require('axios');
-const fs = require('fs');
-const { JSDOM } = require('jsdom');
+document.addEventListener("DOMContentLoaded", function() {
+  const selectElement = document.getElementById("entitySelect");
+  const downloadBtn = document.getElementById("downloadBtn");
 
-// Crea un objeto JSDOM y obtén el objeto document
-const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
-const document = dom.window.document;
+  selectElement.addEventListener("change", function() {
+    const selectedOption = selectElement.value;
 
-// Variables para el control del valor seleccionado
-let lastSelectedValue = '';
-const selectElement = document.getElementById('entitySelect');
-
-if (selectElement) {
-  selectElement.addEventListener('change', () => {
-    const selectedValue = selectElement.value;
-    const apiUrl = `http://localhost:3000/${selectedValue}`;
-
-    // Verificar si el valor seleccionado ha cambiado
-    if (selectedValue !== lastSelectedValue) {
-      axios.get(apiUrl)
-        .then((response) => {
-          const jsonData = JSON.stringify(response.data);
-          const filePath = 'data.json';
-
-          fs.writeFile(filePath, jsonData, (error) => {
-            if (error) {
-              console.error('Error al escribir el archivo:', error);
-            } else {
-              console.log('Archivo JSON descargado exitosamente');
-            }
-          });
-        })
-        .catch((error) => {
-          console.error('Error al conectar a la API:', error);
-        });
-
-      // Actualizar el último valor seleccionado
-      lastSelectedValue = selectedValue;
-    }
-  });
-} else {
-  console.error('Elemento entitySelect no encontrado en el documento.');
-}
-
-
-  function getData() {
-    var selectElement = document.getElementById("entitySelect");
-    var selectedOption = selectElement.value;
-    var downloadBtn = document.getElementById("downloadBtn");
-
-    // Asigna el nombre del botón de descarga según la opción seleccionada
     switch (selectedOption) {
       case "agency":
         downloadBtn.textContent = "Descargar Agencia";
@@ -69,12 +25,30 @@ if (selectElement) {
         downloadBtn.textContent = "Descargar";
         break;
     }
+    downloadBtn.style.display = "inline";
+  });
 
-    // Muestra u oculta el botón de descarga según la opción seleccionada
-    if (selectedOption === "calendar") {
-      downloadBtn.style.display = "inline-block";
-    } else {
-      downloadBtn.style.display = "none";
-    }
-  }
+  downloadBtn.addEventListener("click", function() {
+    const selectedOption = selectElement.value;
+    const baseUrl = 'https://gtfs-restapi-production.up.railway.app/';
+    const apiUrl = baseUrl + selectedOption;
 
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+            throw new Error('Error HTTP: ' + response.status);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const filename = selectedOption + '.json';
+        const json = JSON.stringify(data);
+        const blob = new Blob([json], { type: 'application/json' });
+
+        saveAs(blob, filename);  // Utiliza FileSaver.js para guardar el archivo
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+});
