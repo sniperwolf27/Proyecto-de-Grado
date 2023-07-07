@@ -56,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+
+//////////////////////////////////////////////////////////
+
 const track = document.getElementById("image-track");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
@@ -69,22 +72,27 @@ const handleOnMove = e => {
   if(track.dataset.mouseDownAt === "0") return;
   
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
+        maxDelta = window.innerWidth / 4;
   
   const percentage = (mouseDelta / maxDelta) * -100,
-        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
+  
+  // Asume que tienes 10 imágenes en total, y cada una ocupa 10% (100 / 10) del track.
+  // Así que el total del desplazamiento en porcentaje sería 10 * (10 - número de imágenes que quieres mostrar a la vez).
+  const totalPercentage = 55.7 * (10 - 3);  // Asume que quieres mostrar 3 imágenes a la vez.
+  
+  // Límites de desplazamiento, puedes ajustar estos valores para adaptarse a tu caso
+  const minPercentage = 0;
+  const maxPercentage = -totalPercentage;
+
+  const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, minPercentage), maxPercentage);
   
   track.dataset.percentage = nextPercentage;
   
-  track.animate({
-    transform: `translate(${nextPercentage}%, -50%)`
-  }, { duration: 1200, fill: "forwards" });
+  track.style.transform = `translateX(${nextPercentage}%)`;
   
   for(const image of track.getElementsByClassName("image")) {
-    image.animate({
-      objectPosition: `${100 + nextPercentage}% center`
-    }, { duration: 1200, fill: "forwards" });
+    image.style.objectPosition = `${100 + nextPercentage}% center`;
   }
 }
 
@@ -101,3 +109,9 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+
+
+
+
+
