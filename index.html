@@ -50,7 +50,10 @@
                 <a class="nav-link" aria-current="page" href="">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#equipo">Equipo</a>
+                <a class="nav-link" href="https://github.com/sniperwolf27/Proyecto-de-Grado">Equipo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#seccion-mapa">Mapa</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#seccion-contacto">Contactos</a>
@@ -150,18 +153,15 @@
                         <!-- SECCION ACERCA DE NOSOTROS-->
 <!--========================================================== -->
 
-<section id="mapeo-rutas" class="py-5">
-    <div class="container w-50 m-auto text-center" id="equipo">
-        <h1 class="fs-2 secondary-title">Mapeo de las rutas de <span class="title-top">SD</span></h1>
-        <p class="main-text">A continuación se muestran, las rutas del tranporte público (carros públicos) <span class="title-top">SD</span> en la herramienta <span class="title-top">ARCGIS</span></p>
-    </div>
-
-    <div class="mt-5 text-center">
-        <img id="img-equipo" src="pics/rutas_sd.jpg" alt="equipo" data-aos="fade-up"
-        data-aos-duration="3000">
-    </div>
-
 </section>
+<div class="container w-50 m-auto text-center" id="equipo">
+  <h1 class="fs-2 secondary-title" id="seccion-mapa">Ruta de carros público de SD  </h1>
+</div>
+<div id="map-container">
+  <div id="map">
+  </div>
+</div>
+
 
 
 <!--========================================================== -->
@@ -237,9 +237,9 @@
     <script>
       AOS.init();
     </script>
-+
-    
-    
-    
+    <script async 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA2PYXehw8ARLSmvfaWdVv9OWONeQpZQc&callback=initMap">
+    </script>
+    <script src="maps.api.js"></script>
   </body>
 </html>
