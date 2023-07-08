@@ -10,11 +10,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="prism.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preload" href="pics/slider-images/slider-1.jpg" as="slider-1">
     <link rel="preload" href="pics/slider-images/slider-2.jpg" as="slider-2">
@@ -26,7 +32,7 @@
     <link rel="preload" href="pics/slider-images/slider-8.jpg" as="slider-8">
     <link rel="preload" href="pics/slider-images/slider-9.jpg" as="slider-9">
     <link rel="preload" href="pics/slider-images/slider-10.jpg" as="slider-10">
-
+    
 
     <title class="title-top">WayFinder</title>
   </head>
@@ -150,7 +156,7 @@
 </section>
 
 <!--========================================================== -->
-                        <!-- SECCION ACERCA DE NOSOTROS-->
+                        <!-- SECCION ACERCA DE MAPA-->
 <!--========================================================== -->
 
 </section>
@@ -161,6 +167,42 @@
   <div id="map">
   </div>
 </div>
+
+<!--========================================================== -->
+                        <!-- SECCION ACERCA DOCUMENTACION-->
+<!--========================================================== -->
+
+<div class="ccontent-wrapper">
+  <section class="editor  line-numbers data-line clipboard" style="border-radius: 15px;">
+    <pre id="myInput"><code class="language-javascript">/* eslint-disable */
+      import { defineStore } from 'pinia';
+      import { authUser } from '../services/mini-sil-api';
+      import { Senator, User } from '../types/User';
+      
+      export const useUserStore = defineStore('user', {
+        state: () => ({
+          token: null as string | null,
+          refresh_token: null as string | null,
+          user: null as User | Senator | null,
+          isAuth: false as boolean,
+        }),
+        persist: true,
+        actions: {
+          async authRequest(user: Record<string, string>) {
+            await authUser(user).then(async (res) => {
+              this.token = res.data.token;
+              this.refresh_token = res.data.refresh_token;
+              this.user = res.data.user;
+              this.isAuth = true;
+            });
+          },
+        },
+      });
+      </code></pre>
+  </section>
+  <button class="btn-primary btn-copy" onclick="myFunction()">Copiar</button>
+</div>
+
 
 
 
@@ -231,9 +273,17 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
     <script src="./main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/clipboard/prism-clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/show-language/prism-show-language.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/toolbar/prism-toolbar.min.js"></script>
+
+    
     <script>
       AOS.init();
     </script>
@@ -241,5 +291,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA2PYXehw8ARLSmvfaWdVv9OWONeQpZQc&callback=initMap">
     </script>
     <script src="maps.api.js"></script>
+    <script src="copy.btn.js"></script>
   </body>
 </html>

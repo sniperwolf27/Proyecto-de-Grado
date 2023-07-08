@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap');
+
+/* Estilos del editor */
+.editor {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Cascadia Code', monospace;
+  padding: 10px;
+}
+
+/* Estilos del código */
+.editor code {
+  font-size: 14px;
+}
+/* Estilos personalizados para el editor */
+.editor {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 24px;
+  margin-bottom: 86px;
+  margin-left: 3%;
+}
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.editor {
+    /* Tus estilos actuales */
+    width: 50%;  /* Ajusta el porcentaje según lo necesites */
+}
+
+.right-content {
+    /* Tus estilos para el contenido a la derecha */
+    width: 40%;  /* Ajusta el porcentaje según lo necesites */
+}
+.copy-button {
+    position: absolute;
+    top: 10px; /* Ajusta la posición y la alineación del botón */
+    right: 10px;
+  }
+
+
+
