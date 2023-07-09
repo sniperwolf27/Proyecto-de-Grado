@@ -1,3 +1,6 @@
+import Prism from 'prismjs';
+import 'prismjs/themes/prism.css';
+
 document.addEventListener("DOMContentLoaded", function() {
   const selectElement = document.getElementById("entitySelect");
   const downloadBtn = document.getElementById("downloadBtn");
@@ -109,6 +112,37 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+//////////////////////////////////////////////////////
+function copyCodeToClipboard() {
+  var copyText = document.querySelector(".code-section").innerText;
+  var textArea = document.createElement("textarea");
+  textArea.value = copyText;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+  
+  var copyButton = document.getElementById("copyButton");
+  var copyIcon = document.getElementById("copyIcon");
+  var copyText = document.getElementById("copyText");
+
+  copyIcon.classList.remove("bi-clipboard");
+  copyIcon.classList.add("bi-check");
+  copyText.innerText = "";
+
+  setTimeout(function() {
+      copyIcon.classList.remove("bi-check");
+      copyIcon.classList.add("bi-clipboard");
+  }, 2000);
+}
+
+
+
+
+
+
+
 
 
 

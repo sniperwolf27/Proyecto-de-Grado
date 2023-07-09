@@ -288,7 +288,23 @@ section#mapeo-rutas {
     width: 80%;
     border-radius: 20px; }
 
-
+.logo-size {
+    max-height: 100px; /* ajusta este valor según necesites */
+}
+/* Asegura que las imágenes tomen toda la altura disponible y se redimensionen correctamente */
+/* Asegura que las imágenes se redimensionen correctamente */
+/* Asegura que las imágenes se redimensionen correctamente */
+/* Asegura que las imágenes se redimensionen correctamente */
+.custom-img {
+    max-height: 40vh;
+    object-fit: contain;
+    object-position: center;}
+  
+  
+.container{
+    max-height: 100%;
+}
+  
   
 
 

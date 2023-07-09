@@ -1,51 +1,64 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap');
 
-/* Estilos del editor */
-.editor {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  font-family: 'Cascadia Code', monospace;
-  padding: 10px;
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-/* Estilos del código */
+.editor {
+  position: relative;
+}
+
 .editor code {
   font-size: 14px;
+  font-variant-ligatures : common-ligatures;
 }
-/* Estilos personalizados para el editor */
+
 .editor {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  font-family: 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace;
-  font-size: 14px;
-  
-  padding: 10px;
-  border-radius: 2px;
   margin-top: 24px;
   margin-bottom: 86px;
-  margin-left: 3%;
-}
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+  width: 70%;
 }
 
-.editor {
-    /* Tus estilos actuales */
-    width: 50%;  /* Ajusta el porcentaje según lo necesites */
+.editor .copy-button {
+  margin: 0 10px; 
 }
 
-.right-content {
-    /* Tus estilos para el contenido a la derecha */
-    width: 40%;  /* Ajusta el porcentaje según lo necesites */
-}
 .copy-button {
-    position: absolute;
-    top: 10px; /* Ajusta la posición y la alineación del botón */
-    right: 10px;
-  }
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #008CBA;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
 
+.copy-button:hover {
+  background-color: #007B9A;
+}
 
+.code-section {
+  position: relative; 
+  width:100%;
+}
+.code-section pre code {
+  font-size: 16px; /* Ajusta este valor según necesites */
+}
+.align-items-start {
+  align-items: stretch !important;
+}
+
+/* Asegúrate de que el contenedor del código se expanda para llenar la altura disponible */
+.code-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.code-section pre {
+  flex-grow: 1;
+}
 
