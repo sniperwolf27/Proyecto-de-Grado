@@ -175,7 +175,7 @@
                         <!-- SECCION ACERCA DOCUMENTACION-->
 <!--========================================================== -->
 <h1 class="p-3 fs-2 border-bottom border-3 secondary-title" style="text-align: center;">Documentación de API para mi servicio GTFS</h1>
-<p class="px-4 main-text" style="text-align: justify;margin-left: 5%; margin-right : 5%; font-size: medium;">Bienvenidos a la API del transporte público de Santo Domingo. Utilizando Node.js
+<p class="px-4 main-text" style="text-align: justify;margin-left: 5%; margin-right : 5%; font-size: medium; padding-top: 3%; padding-bottom: 3%;">Bienvenidos a la API del transporte público de Santo Domingo. Utilizando Node.js
 y Express, nos conectamos a una base de datos MS SQL con alta disponibilidad en Azure para ofrecerte datos en tiempo real sobre rutas de transporte. 
 Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, planificación de transporte y análisis de tráfico. Empieza a explorar y ve lo que puedes crear!</p>
 
@@ -233,12 +233,12 @@ Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, plani
             <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
                 <div class="header-section">
                     <h1 class="fs-2 secondary-title">Endpoint:</h1>
-                    <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboard()">
-                        <i id="copyIcon" class="bi bi-clipboard"></i>
-                        <span id="copyText"></span>
+                    <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardRoutes()">
+                        <i id="copyIcon-routes" class="bi bi-clipboard"></i>
+                        <span id=""></span>
                     </button>
                 </div>
-                <pre id="myInput"><code class="language-javascript match-braces data-download-link rainbow-braces">
+                <pre id="copyText-routes"><code class="language-javascript match-braces data-download-link rainbow-braces">
 fetch('https://gtfs-restapi-production.up.railway.app/routes')
 .then(response => response.json())
 .then(data => console.log(data));
@@ -263,12 +263,12 @@ fetch('https://gtfs-restapi-production.up.railway.app/routes')
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
-                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboard()">
-                      <i id="copyIcon" class="bi bi-clipboard"></i>
-                      <span id="copyText"></span>
+                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardStops()">
+                      <i id="copyIcon-stops" class="bi bi-clipboard"></i>
+                      <span id=""></span>
                   </button>
               </div>
-              <pre id="myInput"><code class="language-javascript match-braces data-download-link rainbow-braces">
+              <pre id="copyText-stops"><code class="language-javascript match-braces data-download-link rainbow-braces">
 fetch('https://gtfs-restapi-production.up.railway.app/stops')
 .then(response => response.json())
 .then(data => console.log(data));
@@ -277,11 +277,11 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
           </div>
       </div>
       <div class="col-md-4" style="text-align:justify;">
-          <h3>/stops</h3>
-          <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las rutas de transporte.</p>
-          <p>Metodo: <strong>GET</strong></p>
-          <p>Parámetros: Ninguno</p>
-          <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una ruta de transporte y contiene detalles como el ID de la ruta, el nombre de la ruta, el tipo de vehículo y más.</p>
+        <h3>Endpoint: /stops</h3>
+        <p>Este endpoint devuelve todas las paradas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las paradas de transporte.</p>
+        <p>Metodo: <strong>GET</strong></p>
+        <p>Parámetros: Ninguno</p>
+        <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una parada de transporte y contiene detalles como el ID de la parada, el nombre de la parada, la ubicación y más.</p>
       </div>
   </div>
 </div>
@@ -294,13 +294,13 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
-                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboard()">
-                      <i id="copyIcon" class="bi bi-clipboard"></i>
-                      <span id="copyText"></span>
+                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardStopTimes()">
+                      <i id="copyIcon-stop_times" class="bi bi-clipboard"></i>
+                      <span id=""></span>
                   </button>
               </div>
-              <pre id="myInput"><code class="language-javascript match-braces data-download-link rainbow-braces">
-fetch('https://gtfs-restapi-production.up.railway.app/stops')
+              <pre id="copyText-stop_times"><code class="language-javascript match-braces data-download-link rainbow-braces">
+fetch('https://gtfs-restapi-production.up.railway.app/stop_times')
 .then(response => response.json())
 .then(data => console.log(data));
               
@@ -308,11 +308,11 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
           </div>
       </div>
       <div class="col-md-4" style="text-align:justify;">
-          <h3>/stop_times</h3>
-          <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las rutas de transporte.</p>
-          <p>Metodo: <strong>GET</strong></p>
-          <p>Parámetros: Ninguno</p>
-          <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una ruta de transporte y contiene detalles como el ID de la ruta, el nombre de la ruta, el tipo de vehículo y más.</p>
+        <h3>Endpoint: /stop_times</h3>
+        <p>Este endpoint devuelve los tiempos de parada para las rutas de transporte en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en los horarios de transporte.</p>
+        <p>Metodo: <strong>GET</strong></p>
+        <p>Parámetros: Ninguno</p>
+        <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un tiempo de parada y contiene detalles como el ID de la parada, el ID de la ruta, el tiempo de llegada y más.</p>
       </div>
   </div>
 </div>
@@ -325,13 +325,13 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
-                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboard()">
-                      <i id="copyIcon" class="bi bi-clipboard"></i>
-                      <span id="copyText"></span>
+                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardTrips()">
+                      <i id="copyIcon-trips" class="bi bi-clipboard"></i>
+                      <span id=""></span>
                   </button>
               </div>
-              <pre id="myInput"><code class="language-javascript match-braces data-download-link rainbow-braces">
-fetch('https://gtfs-restapi-production.up.railway.app/stops')
+              <pre id="copyText-trips"><code class="language-javascript match-braces data-download-link rainbow-braces">
+fetch('https://gtfs-restapi-production.up.railway.app/trips')
 .then(response => response.json())
 .then(data => console.log(data));
               
@@ -339,11 +339,11 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
           </div>
       </div>
       <div class="col-md-4" style="text-align:justify;">
-          <h3>/trips</h3>
-          <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las rutas de transporte.</p>
-          <p>Metodo: <strong>GET</strong></p>
-          <p>Parámetros: Ninguno</p>
-          <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una ruta de transporte y contiene detalles como el ID de la ruta, el nombre de la ruta, el tipo de vehículo y más.</p>
+        <h3>Endpoint: /trips</h3>
+        <p>Este endpoint proporciona información sobre los viajes individuales realizados por los vehículos de transporte en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en los viajes de transporte.</p>
+        <p>Metodo: <strong>GET</strong></p>
+        <p>Parámetros: Ninguno</p>
+        <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un viaje y contiene detalles como el ID del viaje, el ID de la ruta, el ID del servicio y más.</p>
       </div>
   </div>
 </div>
@@ -356,13 +356,13 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
-                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboard()">
-                      <i id="copyIcon" class="bi bi-clipboard"></i>
-                      <span id="copyText"></span>
+                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardCalendar()">
+                      <i id="copyIcon-calendar" class="bi bi-clipboard"></i>
+                      <span id=""></span>
                   </button>
               </div>
-              <pre id="myInput"><code class="language-javascript match-braces data-download-link rainbow-braces">
-fetch('https://gtfs-restapi-production.up.railway.app/stops')
+              <pre id="copyText-calendar"><code class="language-javascript match-braces data-download-link rainbow-braces">
+fetch('https://gtfs-restapi-production.up.railway.app/calendar')
 .then(response => response.json())
 .then(data => console.log(data));
               
@@ -370,14 +370,58 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
           </div>
       </div>
       <div class="col-md-4" style="text-align:justify;">
-          <h3>/calendar</h3>
-          <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las rutas de transporte.</p>
-          <p>Metodo: <strong>GET</strong></p>
-          <p>Parámetros: Ninguno</p>
-          <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una ruta de transporte y contiene detalles como el ID de la ruta, el nombre de la ruta, el tipo de vehículo y más.</p>
+        <h3>Endpoint: /calendar</h3>
+        <p>Este endpoint proporciona información sobre los horarios de operación del servicio de transporte en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en los horarios de operación.</p>
+        <p>Metodo: <strong>GET</strong></p>
+        <p>Parámetros: Ninguno</p>
+        <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un día en el calendario del servicio de transporte y contiene detalles como la fecha, si el servicio está disponible y más.</p>
       </div>
   </div>
 </div>
+<!--========================================================== -->
+                        <!-- DOCUMENTACION SECCION FINAL->
+<!--========================================================== -->
+<!-- Respuestas de la API -->
+<div class="container">
+  <div class="row align-items-start mt-5">
+      <div class="col">
+          <h2>Respuestas de la API</h2>
+          <p>Nuestra API responde con códigos de estado HTTP estándar para indicar el éxito o fracaso de una solicitud. Las respuestas exitosas devolverán un cuerpo de respuesta en formato JSON, que sigue la estructura de un documento GTFS estándar.</p>
+          <p>Por ejemplo, una solicitud GET a cualquier endpoint puede devolver una respuesta exitosa (HTTP 200) con un cuerpo de respuesta que contiene un arreglo de objetos JSON.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Casos de Uso -->
+<div class="container">
+  <div class="row align-items-start mt-5">
+      <div class="col">
+          <h2>Casos de uso</h2>
+          <p>Nuestra API puede ser de gran utilidad para desarrolladores y empresas que trabajen en el desarrollo de aplicaciones de transporte, análisis de rutas, o cualquier proyecto que requiera de datos precisos y actualizados del sistema de transporte público de Santo Domingo.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Soporte -->
+<div class="container">
+  <div class="row align-items-start mt-5">
+      <div class="col">
+          <h2>Soporte</h2>
+          <p>Para cualquier pregunta o problema con nuestra API, por favor, contacta con nosotros a través del formulario de contacto que se encuentra más abajo en esta página. Nuestro equipo de soporte está disponible y listo para ayudarte.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Conclusión -->
+<div class="container" style="padding-bottom: 10%;">
+  <div class="row align-items-start mt-5">
+      <div class="col">
+          <h2>Conclusión</h2>
+          <p>Gracias por tu interés en nuestra API. Este es un proyecto universitario que hemos creado con mucho esfuerzo y dedicación. Esperamos que te sea de utilidad en tus proyectos y desarrollos. Continuaremos mejorando y expandiendo nuestras funcionalidades, así que ¡mantente al tanto de nuestras actualizaciones!</p>
+      </div>
+  </div>
+</div>
+
 <!--========================================================== -->
                         <!-- SECCION CONTACTOS-->
 <!--========================================================== -->
@@ -449,7 +493,7 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
-    <script src="./main.js"></script>
+    <script src="main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/bootstrap-icons@1.0.0/font/bootstrap-icons.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/clipboard/prism-clipboard.min.js"></script>
