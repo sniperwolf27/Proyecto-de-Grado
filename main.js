@@ -75,14 +75,14 @@ const handleOnMove = e => {
   if(track.dataset.mouseDownAt === "0") return;
   
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 4;
+        maxDelta = window.innerWidth / 2;
   
   const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
   
   // Asume que tienes 10 imágenes en total, y cada una ocupa 10% (100 / 10) del track.
   // Así que el total del desplazamiento en porcentaje sería 10 * (10 - número de imágenes que quieres mostrar a la vez).
-  const totalPercentage = 55.7 * (10 - 3);  // Asume que quieres mostrar 3 imágenes a la vez.
+  const totalPercentage = 10 * (10 - 3);  // Asume que quieres mostrar 3 imágenes a la vez.
   
   // Límites de desplazamiento, puedes ajustar estos valores para adaptarse a tu caso
   const minPercentage = 0;
@@ -112,6 +112,7 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
 
 //////////////////////////////////////////////////////
 function copyCodeToClipboard() {
