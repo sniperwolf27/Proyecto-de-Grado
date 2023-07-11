@@ -25,6 +25,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="okadia.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
     <link rel="preload" href="pics/slider-images/slider-1.jpg" as="slider-1">
     <link rel="preload" href="pics/slider-images/slider-2.jpg" as="slider-2">
     <link rel="preload" href="pics/slider-images/slider-3.jpg" as="slider-3">
@@ -43,40 +44,43 @@
   <!--========================================================== -->
                         <!-- ENCABEZADO -->
   <!--========================================================== -->
-    <header class="container-fluid">
-      <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
-        <div class="container">
-          <a class="navbar-brand" href="">
-              <span class="fs-5 fw-bold title-top">WayFinder</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://github.com/sniperwolf27/Proyecto-de-Grado">Equipo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#seccion-mapa">Mapa</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#seccion-contacto">Contactos</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#seccion-documentacion">Documentación</a>
-              </li>
-            </ul>
-          </div>
-
+  <header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
+      <div class="container">
+        <a class="navbar-brand" href="">
+            <span class="fs-5 fw-bold title-top">WayFinder</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#seccion-mapa">Mapa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#seccion-contacto">Contactos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#seccion-documentacion">Documentación</a>
+            </li>
+            <li class="nav-item">
+              <select class="form-select" id="entitySelect" aria-label="GTFS Files">
+                  <option selected>GTFS FOLDER</option>
+                      <option value="routes">Routes</option>
+                      <option value="stops">Stops</option>
+                      <option value="trips">Trips</option>
+                      <option value="stop_times">Stop_times</option>
+                      <option value="calendar">Calendar</option>
+                      <option value="agency">Agency</option>
+              </select>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
-
+      </div>
+    </nav>
+</header>
     <!--========================================================== -->
                         <!-- SLIDER DE IMAGENES-->
     <!--========================================================== -->
@@ -227,42 +231,81 @@ Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, plani
 
 <body>
 <!--========================================================== -->
+                        <!-- URL DE NUESTRA API-->
+<!--========================================================== -->
+<div class="container">
+  <div class="row align-items-center mt-5">
+      <div class="col-md-8">   
+          <pre id="api-url"><code class="language-javascript match-braces data-download-link rainbow-braces">
+                https://gtfs-restapi-production.up.railway.app
+          </code></pre>
+      </div>
+      <div class="col-md-4">
+          <div class="mb-4">
+              <p><strong>Esta es la URL base de nuestra API</strong>. Todos los endpoints se construirán a partir de esta base.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!--========================================================== -->
                         <!-- SECCION ACERCA DOCUMENTACION ROUTES-->
 <!--========================================================== -->
-
-  <div class="container">
-    <div class="row align-items-start mt-5">
-        <div class="col-md-7">   
-            <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
-                <div class="header-section">
-                    <h1 class="fs-2 secondary-title">Endpoint:</h1>
-                    <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardRoutes()">
-                        <i id="copyIcon-routes" class="bi bi-clipboard"></i>
-                        <span id=""></span>
-                    </button>
-                </div>
-                <pre id="copyText-routes"><code class="language-javascript match-braces data-download-link rainbow-braces">
+<div class="container">
+  <div class="row align-items-start mt-5">
+      <div class="col-md-8">   
+          <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
+              <div class="header-section">
+                  <h1 class="fs-2 secondary-title">Endpoint:</h1>
+                  <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardRoutes()">
+                      <i id="copyIcon-routes" class="bi bi-clipboard"></i>
+                      <span id=""></span>
+                  </button>
+              </div>
+              <pre id="copyText-routes"><code class="language-javascript match-braces data-download-link rainbow-braces">
 fetch('https://gtfs-restapi-production.up.railway.app/routes')
 .then(response => response.json())
 .then(data => console.log(data));
-                </code></pre>
-            </div>
-        </div>
-        <div class="col-md-4" style="text-align:justify;">
-            <h3>/routes</h3>
-            <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las rutas de transporte.</p>
-            <p>Metodo: <strong>GET</strong></p>
-            <p>Parámetros: Ninguno</p>
-            <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una ruta de transporte y contiene detalles como el ID de la ruta, el nombre de la ruta, el tipo de vehículo y más.</p>
-        </div>
-    </div>
+               
+              </code></pre>
+          </div>
+      </div>
+      <div class="col-md-4" style="text-align:justify;">
+          <h3>/routes</h3>
+          <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las rutas de transporte.</p>
+          <p>Metodo: <strong>GET</strong></p>
+          <p>Parámetros: Ninguno</p>
+          <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una ruta de transporte y contiene detalles como el ID de la ruta, el nombre de la ruta, el tipo de vehículo y más.</p>
+      </div>
+  </div>
+  <div class="row align-items-start mt-5">
+      <div class="col-md-8">   
+          <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
+              <div class="header-section">
+                  <h1 class="fs-2 secondary-title">Estructura de la respuesta:</h1>
+              </div>
+              <pre id="copyText-routes"><code class="language-json match-braces data-download-link rainbow-braces">
+{"route_id":105,"agency_id":1,"route_short_name":"C-99 B",
+"route_long_name":"Carretera Mella Esq. Av. Charles deGaulle (Km. 9)
+ a H7C/Miguel Diaz Esq. C/Francisco de Porras.","route_type":5}
+                              </code></pre>
+          </div>
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+          <img src="pics/doc-images/ruta.png" alt="routes" class="img-fluid custom-img">
+      </div>
+  </div>
 </div>
+
+
 <!--========================================================== -->
                         <!-- SECCION ACERCA STOPS->
 <!--========================================================== -->
 <div class="container">
   <div class="row align-items-start mt-5">
-      <div class="col-md-7">   
+      <div class="col-md-8">   
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
@@ -287,13 +330,32 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una parada de transporte y contiene detalles como el ID de la parada, el nombre de la parada, la ubicación y más.</p>
       </div>
   </div>
+
+  <div class="row align-items-start mt-5">
+    <div class="col-md-8">   
+        <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
+            <div class="header-section">
+                <h1 class="fs-2 secondary-title">Estructura de la respuesta:</h1>
+            </div>
+            <pre id="copyText-routes"><code class="language-json match-braces data-download-link rainbow-braces">
+{"stop_id":"stop1","stop_name":"Carretera Mella Esq.
+ Av. Charles de Gaulle (Km. 9)","stop_lat":18.5192543,
+ "stop_lon":-69.8347524}
+                            </code></pre>
+        </div>
+    </div>
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="pics/doc-images/stops.png" alt="routes" class="img-fluid custom-img">
+    </div>
+</div>
+
 </div>
 <!--========================================================== -->
                         <!-- SECCION ACERCA STOPS_TIMES->
 <!--========================================================== -->
 <div class="container">
   <div class="row align-items-start mt-5">
-      <div class="col-md-7">   
+      <div class="col-md-8">   
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
@@ -318,13 +380,32 @@ fetch('https://gtfs-restapi-production.up.railway.app/stop_times')
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un tiempo de parada y contiene detalles como el ID de la parada, el ID de la ruta, el tiempo de llegada y más.</p>
       </div>
   </div>
+
+  <div class="row align-items-start mt-5">
+    <div class="col-md-8">   
+        <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
+            <div class="header-section">
+                <h1 class="fs-2 secondary-title">Estructura de la respuesta:</h1>
+            </div>
+            <pre id="copyText-routes"><code class="language-json match-braces data-download-link rainbow-braces">
+{"trip_id":"trip1","arrival_time":"1:00:00",
+"departure_time":"8:00:00","stop_id":"stop1",
+"stop_sequence":1}
+                            </code></pre>
+        </div>
+    </div>
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="pics/doc-images/stop_times.png" alt="routes" class="img-fluid custom-img">
+    </div>
+</div>
+
 </div>
 <!--========================================================== -->
                         <!-- SECCION ACERCA TRIPS->
 <!--========================================================== -->
 <div class="container">
   <div class="row align-items-start mt-5">
-      <div class="col-md-7">   
+      <div class="col-md-8">   
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
@@ -349,13 +430,32 @@ fetch('https://gtfs-restapi-production.up.railway.app/trips')
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un viaje y contiene detalles como el ID del viaje, el ID de la ruta, el ID del servicio y más.</p>
       </div>
   </div>
+
+  <div class="row align-items-start mt-5">
+    <div class="col-md-8">   
+        <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
+            <div class="header-section">
+                <h1 class="fs-2 secondary-title">Estructura de la respuesta:</h1>
+            </div>
+            <pre id="copyText-routes"><code class="language-json match-braces data-download-link rainbow-braces">
+{"route_id":105,"service_id":208,"trip_id":"trip1"},
+{"route_id":114,"service_id":217,"trip_id":"trip10"},
+{"route_id":204,"service_id":307,"trip_id":"trip100"}
+                            </code></pre>
+        </div>
+    </div>
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="pics/doc-images/trips.png" alt="routes" class="img-fluid custom-img">
+    </div>
+</div>
+
 </div>
 <!--========================================================== -->
                         <!-- SECCION ACERCA CALENDAR->
 <!--========================================================== -->
 <div class="container">
   <div class="row align-items-start mt-5">
-      <div class="col-md-7">   
+      <div class="col-md-8">   
           <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
               <div class="header-section">
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
@@ -380,6 +480,26 @@ fetch('https://gtfs-restapi-production.up.railway.app/calendar')
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un día en el calendario del servicio de transporte y contiene detalles como la fecha, si el servicio está disponible y más.</p>
       </div>
   </div>
+
+  <div class="row align-items-start mt-5">
+    <div class="col-md-8">   
+        <div class="code-section editor line-numbers data-line match-braces data-download-link rainbow-braces">
+            <div class="header-section">
+                <h1 class="fs-2 secondary-title">Estructura de la respuesta:</h1>
+            </div>
+            <pre id="copyText-routes"><code class="language-json match-braces data-download-link rainbow-braces">
+{"service_id":208,"monday":true,"tuesday":true,"wednesday"
+:true,"thursday":true,"friday":true,"saturday":true,"sunday":
+true,"start_date":"2023-01-01T00:00:00.000Z",
+"end_date":"2023-12-31T00:00:00.000Z"}
+                            </code></pre>
+        </div>
+    </div>
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <img src="pics/doc-images/calendar.png" alt="routes" class="img-fluid custom-img">
+    </div>
+</div>
+
 </div>
 <!--========================================================== -->
                         <!-- DOCUMENTACION SECCION FINAL->
@@ -455,18 +575,6 @@ fetch('https://gtfs-restapi-production.up.railway.app/calendar')
       <div class="mb-3">       
         <textarea class="form-control" name="message" id="message" rows="4" placeholder="Tell us how we can help you"></textarea>
       </div>
-
-      <div class="mb-3">
-        <select class="form-select" id="entitySelect">
-          <option value="agency">Agency</option>
-          <option value="routes">Routes</option>
-          <option value="trips">Trips</option>
-          <option value="stops">Stops</option>
-          <option value="stop_times">Stop trips</option>
-          <option value="calendar">Calendar</option>
-        </select>
-        <button type="button" id="downloadBtn" class="btn btn-download rounded fs-7" style="display: none;">Download<i></i></button>
-    </div>
     
         <button type="submit" class=" btn btn-primary w-100 fs-5">Send</button>
       </div>
@@ -496,7 +604,6 @@ fetch('https://gtfs-restapi-production.up.railway.app/calendar')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
-    <script src="main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/bootstrap-icons@1.0.0/font/bootstrap-icons.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/clipboard/prism-clipboard.min.js"></script>
@@ -505,6 +612,7 @@ fetch('https://gtfs-restapi-production.up.railway.app/calendar')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
     <script src="path/to/prism-rainbow-brackets.min.js"></script>
 
 
@@ -523,5 +631,6 @@ fetch('https://gtfs-restapi-production.up.railway.app/calendar')
       
     <script src="maps.api.js"></script>
     <script src="copy.btn.js"></script>
+    <script src="main.js" ></script>
   </body>
 </html>
