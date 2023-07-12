@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="slider.css">
     <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="write.machine.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,10 +236,18 @@ Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, plani
 <!--========================================================== -->
 <div class="container">
   <div class="row align-items-center mt-5">
-      <div class="col-md-8">   
-          <pre id="api-url"><code class="language-javascript match-braces data-download-link rainbow-braces">
-                https://gtfs-restapi-production.up.railway.app
-          </code></pre>
+      <div class="col-md-8"> 
+        <div class="header-section" style="display: flex; justify-content: flex-end;">
+          <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardApiUrl()">
+              <i id="copyIcon-ApiUrl" class="bi bi-clipboard"></i>
+          </button>
+      </div>  
+          <pre id="api-url">
+              <code id="typewriter" class="language-javascript match-braces data-download-link rainbow-braces">
+                  <code>
+                  </code>
+              </code>
+          </pre>
       </div>
       <div class="col-md-4">
           <div class="mb-4">
@@ -247,9 +256,6 @@ Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, plani
       </div>
   </div>
 </div>
-
-
-
 <!--========================================================== -->
                         <!-- SECCION ACERCA DOCUMENTACION ROUTES-->
 <!--========================================================== -->
@@ -261,7 +267,6 @@ Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, plani
                   <h1 class="fs-2 secondary-title">Endpoint:</h1>
                   <button id="copyButton" class="btn btn-primary copy-button" data-copy-state="copy" onclick="copyCodeToClipboardRoutes()">
                       <i id="copyIcon-routes" class="bi bi-clipboard"></i>
-                      <span id=""></span>
                   </button>
               </div>
               <pre id="copyText-routes"><code class="language-javascript match-braces data-download-link rainbow-braces">
@@ -632,5 +637,7 @@ true,"start_date":"2023-01-01T00:00:00.000Z",
     <script src="maps.api.js"></script>
     <script src="copy.btn.js"></script>
     <script src="main.js" ></script>
+    <script src="write.machine.js" ></script>
   </body>
+
 </html>

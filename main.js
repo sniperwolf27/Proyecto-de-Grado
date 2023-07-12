@@ -55,7 +55,7 @@ const handleOnMove = e => {
   
   // Asume que tienes 10 imágenes en total, y cada una ocupa 10% (100 / 10) del track.
   // Así que el total del desplazamiento en porcentaje sería 10 * (10 - número de imágenes que quieres mostrar a la vez).
-  const totalPercentage = 10 * (10 - 3);  // Asume que quieres mostrar 3 imágenes a la vez.
+  const totalPercentage = 56.250 * (10 - 3);  // Asume que quieres mostrar 3 imágenes a la vez.
   
   // Límites de desplazamiento, puedes ajustar estos valores para adaptarse a tu caso
   const minPercentage = 0;

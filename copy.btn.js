@@ -1,3 +1,26 @@
+
+function copyCodeToClipboardApiUrl() {
+  /* Obtén el elemento que contiene el código */
+  var copyText = document.getElementById("api-url");
+
+  /* Crea un rango y selecciona el texto del elemento de entrada de texto */
+  var range = document.createRange();
+  range.selectNode(copyText);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+
+  /* Copia el texto al portapapeles */
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  /* Desselecciona el rango */
+  window.getSelection().removeAllRanges();
+}
 function copyCodeToClipboardAgency() {
   /* Obtén el elemento que contiene el código */
   var copyText = document.getElementById("copyText-agency");
@@ -263,3 +286,25 @@ async function copyCodeToClipboardStopTimes() {
   }
 }
 
+async function copyCodeToClipboardApiUrl() {
+  /* Obtén el elemento que contiene el código */
+  var copyText = document.getElementById("api-url").innerText;
+  /* Obtén el elemento que contiene el ícono */
+  var copyIcon = document.getElementById("copyIcon-ApiUrl");
+
+  /* Copia el texto al portapapeles */
+  try {
+      await navigator.clipboard.writeText(copyText);
+      console.log('Copying to clipboard was successful');
+
+      /* Cambia el ícono a un ícono de verificación */
+      copyIcon.className = "bi bi-clipboard-check";
+
+      /* Revierte el ícono a su estado original después de 1.2 segundos */
+      setTimeout(function() {
+          copyIcon.className = "bi bi-clipboard";
+      }, 2000);
+  } catch (err) {
+      console.log('Oops, unable to copy');
+  }
+}
