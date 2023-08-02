@@ -47,39 +47,39 @@
   <!--========================================================== -->
   <header class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
-      <div class="container">
-        <a class="navbar-brand" href="">
-            <span class="fs-5 fw-bold title-top">WayFinder</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#seccion-mapa">Mapa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#seccion-contacto">Contactos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#seccion-documentacion">Documentación</a>
-            </li>
-            <li class="nav-item">
-              <select class="form-select" id="entitySelect" aria-label="GTFS Files">
-                  <option selected>GTFS FOLDER</option>
-                      <option value="routes">Routes</option>
-                      <option value="stops">Stops</option>
-                      <option value="trips">Trips</option>
-                      <option value="stop_times">Stop_times</option>
-                      <option value="calendar">Calendar</option>
-                      <option value="agency">Agency</option>
-              </select>
-            </li>
-          </ul>
+        <div class="container">
+            <a class="navbar-brand" href="">
+                <span class="fs-5 fw-bold title-top">WayFinder</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion-mapa">Mapa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion-contacto">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccion-documentacion">Documentación</a>
+                    </li>
+                    <li class="nav-item">
+                        <select class="form-select" id="entitySelect" aria-label="GTFS Files">
+                            <option selected>GTFS FOLDER</option>
+                            <option value="routes">Routes</option>
+                            <option value="stops">Stops</option>
+                            <option value="trips">Trips</option>
+                            <option value="stop_times">Stop_times</option>
+                            <option value="calendar">Calendar</option>
+                            <option value="agency">Agency</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 </header>
     <!--========================================================== -->
@@ -123,7 +123,7 @@
     <div class="row w-75 mx-auto" id="servicios-fila-1">       
         <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center my-5 icono-wrap ">
             <img src="pics/code.png" alt="desarrollo"   width="180" height="160" data-aos="fade-up"
-            data-aos-duration="2000">
+            data-aos-duration="2000" draggable="false">
 
             <div>
                 <h3 class="fs-5 mt-4 px-4 pb-1 secondary-title">Desarrollo de aplicaciones</h3>
@@ -134,7 +134,7 @@
 
         <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center  my-5 icono-wrap">
             <img src="pics/integracion-de-datos.png" alt="concepto" width="180" height="160" data-aos="fade-up"
-            data-aos-duration="3000">
+            data-aos-duration="3000" draggable="false">
 
             <div>
                 <h3 class="fs-5 mt-4 px-4 pb-1 icono-wrap secondary-title">Facíl integración</h3>
@@ -146,7 +146,7 @@
     <div class="row w-75 mx-auto mb-5" id="servicios-fila-2">       
         <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center  my-5 icono-wrap">
             <img src="pics/navegador.png" alt="comunicaciones" width="180" height="160" data-aos="fade-up"
-            data-aos-duration="3000">
+            data-aos-duration="3000" draggable="false">
 
             <div>
                 <h3 class="fs-5 mt-4 px-4 pb-1 secondary-title">Reducción del trafíco</h3>
@@ -156,7 +156,7 @@
 
         <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center my-5 icono-wrap">
             <img src="pics/easy-access.png" alt="seo" width="180" height="160" data-aos="fade-up"
-            data-aos-duration="3000">
+            data-aos-duration="3000" draggable="false">
 
             <div>
                 <h3 class="fs-5 mt-4 px-4 pb-1 secondary-title">Accesibilidad y eficiencia</h3>
@@ -556,39 +556,38 @@ true,"start_date":"2023-01-01T00:00:00.000Z",
 
 <section id="seccion-contacto" class="d-flex flex-column justify-content-between border-bottom border-2">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-10 col-md-8 col-lg-12">
-      <div class="container" id="contenedor-formulario">
-        <div class="text-center mb-4" id="titulo-formulario">
-          <h2 class="text-white">Contact Us</h2>
-        </div>
+      <div class="col-12 col-sm-10 col-md-8 col-lg-12">
+          <div class="container" id="contenedor-formulario">
+              <div class="text-center mb-4" id="titulo-formulario">
+                  <h2 class="text-white">Contact Us</h2>
+              </div>
+              <form method="post" action="mailto:dayanpr2728@gmail.com?subject=Contact Form Submission">
+                  <div class="mb-3">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                  </div>
 
+                  <div class="mb-3">
+                      <label for="name">Name</label>
+                      <input type="input" class="form-control" id="name" name="name" placeholder="Juan Perez">
+                  </div>
 
-  <form method="POST" data-netlify="true" action="#">
+                  <div class="mb-3">
+                      <label for="phone">Phone</label>
+                      <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone">
+                  </div>
 
-      <div class= "mb-3">           
-        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                  <div class="mb-3">
+                      <label for="message">Message</label>
+                      <textarea class="form-control" name="message" id="message" rows="4" placeholder="Tell us how we can help you"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary w-100 fs-5">Send</button>
+              </form>
+          </div>
       </div>
-
-      <div class="mb-3">            
-        <input type="input" class="form-control" id="name" name="name" placeholder="Juan Perez">
-      </div>
-
-      <div class="mb-3">
-        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone">
-      </div>
-
-      <div class="mb-3">       
-        <textarea class="form-control" name="message" id="message" rows="4" placeholder="Tell us how we can help you"></textarea>
-      </div>
-    
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Send</button>
-      </div>
-      <div class="mb-3">
-    </div>
-  </form>
-</div>
+  </div>
 </section>
-
 
 <!--========================================================== -->
                         <!--FOOTER-->
@@ -638,6 +637,7 @@ true,"start_date":"2023-01-01T00:00:00.000Z",
     <script src="copy.btn.js"></script>
     <script src="main.js" ></script>
     <script src="write.machine.js" ></script>
+    <script src="mouseHover.js" ></script>
   </body>
 
 </html>

@@ -291,10 +291,24 @@ section#mapeo-rutas {
 .logo-size {
     max-height: 100px; /* ajusta este valor según necesites */
 }
-/* Asegura que las imágenes tomen toda la altura disponible y se redimensionen correctamente */
-/* Asegura que las imágenes se redimensionen correctamente */
-/* Asegura que las imágenes se redimensionen correctamente */
-/* Asegura que las imágenes se redimensionen correctamente */
+
+/* Estilo para las opciones de la barra de navegación en el hover */
+/* Estilo para las opciones de la barra de navegación */
+.navbar-nav .nav-item .nav-link {
+    color: white; /* Cambia esto por el color deseado del texto normal */
+    margin: 0 5px; /* Cambia estos valores para ajustar el espaciado horizontal */
+    padding: 10px; /* Cambia estos valores para ajustar el espaciado interno */
+    border-radius: 10px; /* Cambia esto por el valor deseado para redondear los bordes */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: var(--main-color); 
+    color: white; 
+    padding: 10px; 
+    border-radius: 10px; 
+    transition: all 0.1s ease; 
+}
+
 .custom-img {
     max-height: 40vh;
     object-fit: contain;
