@@ -108,9 +108,9 @@
 
 
     <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
-    <h1 class="p-3 fs-2 border-bottom border-3 secondary-title">Build smarter transit apps with Wayfinder's comprehensive data<span class="title-top"> InnoTechrate<span/></h1>
+    <h1 class="p-3 fs-2 border-bottom border-3 secondary-title">Potencia tus apps de transporte con la data completa de<span class="title-top"> Wayfinder<span/></h1>
      <p class="p-3  fs-4 secondary-title">
-         <span class="title-top">Wayfinder</span> la plataforma para desarrolladores de aplicaciones de transporte público más poderosa
+         <span class="title-top"></span> la plataforma para desarrolladores de aplicaciones de transporte público más poderosa
      </p>   
     </section>
 
@@ -182,17 +182,17 @@
 <!--========================================================== -->
                         <!-- SECCION ACERCA DOCUMENTACION-->
 <!--========================================================== -->
-<h1 id="seccion-documentacion" class="p-3 fs-2 border-bottom border-3 secondary-title" style="text-align: center;">Documentación de API para mi servicio GTFS</h1>
-<p class="px-4 main-text" style="text-align: justify;margin-left: 5%; margin-right : 5%; font-size: medium; padding-top: 3%; padding-bottom: 3%;">Bienvenidos a la API del transporte público de Santo Domingo. Utilizando Node.js
-y Express, nos conectamos a una base de datos MS SQL con alta disponibilidad en Azure para ofrecerte datos en tiempo real sobre rutas de transporte. 
-Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, planificación de transporte y análisis de tráfico. Empieza a explorar y ve lo que puedes crear!</p>
+<h1 id="seccion-documentacion" class="p-3 fs-2 border-bottom border-3 secondary-title" style="text-align: center;">Documentación del API WayFinder</h1>
+<p class="px-4 main-text" style="text-align: justify;margin-left: 5%; margin-right : 5%; font-size: medium; padding-top: 3%; padding-bottom: 3%;">Bienvenidos a nuestra API del transporte público de Santo Domingo, más específicamente de los carros públicos.
+  Utilizando Node.js y Express, nos conectamos a una base de datos SQL Server con alta disponibilidad en Azure para ofrecerte información en tiempo real sobre las rutas de transporte. Nuestros datos GTFS están disponibles para potenciar tus aplicaciones de mapeo,
+   planificación de transporte y análisis de tráfico. ¡Comienza a explorar y descubre lo que puedes crear!</p>
 
 
 <div class="container">
   <div class="row">
       <div class="col-md-7">
-          <h2 class="mt-4">Cómo empezar</h2>
-          <p>Para utilizar nuestra API necesitas:</p>
+          <h2 class="mt-4">Cómo empezar a probar</h2>
+          <p>Para utilizar nuestra API puedes utilizar:</p>
           <ul>
               <li>Cliente HTTP: <a href="https://www.postman.com/downloads/" target="_blank">Postman</a>, <a href="https://www.thunderclient.io/" target="_blank">Thunder Client</a>, o tu cliente de preferencia.</li>
               <li><a href="https://nodejs.org/es/download/" target="_blank">Node.js</a>: (Opcional) Si quieres interactuar con nuestra API desde tu código.</li>
@@ -208,22 +208,24 @@ Nuestros datos GTFS están aquí para potenciar tus aplicaciones de mapeo, plani
           <ol>
               <li>Descarga e instala un cliente HTTP.</li>
               <li>(Opcional) Si planeas desarrollar localmente, asegúrate de tener <a href="https://nodejs.org/es/download/" target="_blank">Node.js</a> instalado.</li>
-              <li>¡Estás listo para explorar nuestra API!</li>
+              <li>¡ A continuación sigue los pasos que se muestran más adelante y estarás listo para desarrloar con nuestra API !</li>
+              
+
           </ol>
           <p class="mt-3">Recuerda, si tienes alguna duda, estamos aquí para ayudarte.</p>
       </div>
       <div class="col-md-5">
           <div class="row">
               <div class="col-sm-12 d-flex justify-content-center mb-3">
-                  <img src="pics/companies-images/node.js.png" alt="Logo Postman" class="img-fluid custom-img">
+                  <img src="pics/companies-images/node.js.png" alt="Logo Postman" class="img-fluid custom-img" draggable="false">
               </div>
           </div>
           <div class="row">
               <div class="col-6 d-flex justify-content-center mb-3">
-                  <img src="pics/companies-images/postman.png" alt="Logo Thunder Client" class="img-fluid custom-img">
+                  <img src="pics/companies-images/postman.png" alt="Logo Thunder Client" class="img-fluid custom-img" draggable="false">
               </div>
               <div class="col-6 d-flex justify-content-center mb-3">
-                  <img src="pics/companies-images/thunderclient.avif" alt="Logo Node.js" class="img-fluid custom-img">
+                  <img src="pics/companies-images/thunderclient.avif" alt="Logo Node.js" class="img-fluid custom-img" draggable="false">
               </div>
           </div>
       </div>
@@ -279,9 +281,9 @@ fetch('https://gtfs-restapi-production.up.railway.app/routes')
       </div>
       <div class="col-md-4" style="text-align:justify;">
           <h3>/routes</h3>
-          <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las rutas de transporte.</p>
+          <p>Este endpoint devuelve todas las rutas de transporte disponibles en Santo Domingo.</p>
           <p>Metodo: <strong>GET</strong></p>
-          <p>Parámetros: Ninguno</p>
+
           <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una ruta de transporte y contiene detalles como el ID de la ruta, el nombre de la ruta, el tipo de vehículo y más.</p>
       </div>
   </div>
@@ -299,7 +301,7 @@ fetch('https://gtfs-restapi-production.up.railway.app/routes')
           </div>
       </div>
       <div class="col-md-3 d-flex align-items-center justify-content-center">
-          <img src="pics/doc-images/ruta.png" alt="routes" class="img-fluid custom-img">
+          <img src="pics/doc-images/ruta.png" alt="routes" class="img-fluid custom-img" draggable="false">
       </div>
   </div>
 </div>
@@ -329,9 +331,8 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
       </div>
       <div class="col-md-4" style="text-align:justify;">
         <h3>Endpoint: /stops</h3>
-        <p>Este endpoint devuelve todas las paradas de transporte disponibles en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en las paradas de transporte.</p>
+        <p>Este endpoint devuelve todas las paradas de transporte disponibles en Santo Domingo.</p>
         <p>Metodo: <strong>GET</strong></p>
-        <p>Parámetros: Ninguno</p>
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa una parada de transporte y contiene detalles como el ID de la parada, el nombre de la parada, la ubicación y más.</p>
       </div>
   </div>
@@ -350,7 +351,7 @@ fetch('https://gtfs-restapi-production.up.railway.app/stops')
         </div>
     </div>
     <div class="col-md-3 d-flex align-items-center justify-content-center">
-        <img src="pics/doc-images/stops.png" alt="routes" class="img-fluid custom-img">
+        <img src="pics/doc-images/stops.png" alt="routes" class="img-fluid custom-img" draggable="false">
     </div>
 </div>
 
@@ -379,9 +380,8 @@ fetch('https://gtfs-restapi-production.up.railway.app/stop_times')
       </div>
       <div class="col-md-4" style="text-align:justify;">
         <h3>Endpoint: /stop_times</h3>
-        <p>Este endpoint devuelve los tiempos de parada para las rutas de transporte en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en los horarios de transporte.</p>
+        <p>Este endpoint devuelve los tiempos de parada para las rutas de transporte en Santo Domingo.</p>
         <p>Metodo: <strong>GET</strong></p>
-        <p>Parámetros: Ninguno</p>
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un tiempo de parada y contiene detalles como el ID de la parada, el ID de la ruta, el tiempo de llegada y más.</p>
       </div>
   </div>
@@ -400,8 +400,8 @@ fetch('https://gtfs-restapi-production.up.railway.app/stop_times')
         </div>
     </div>
     <div class="col-md-3 d-flex align-items-center justify-content-center">
-        <img src="pics/doc-images/stop_times.png" alt="routes" class="img-fluid custom-img">
-    </div>
+        <img src="pics/doc-images/stop_times.png" alt="routes" class="img-fluid custom-img" draggable="false">
+    </div> 
 </div>
 
 </div>
@@ -429,9 +429,8 @@ fetch('https://gtfs-restapi-production.up.railway.app/trips')
       </div>
       <div class="col-md-4" style="text-align:justify;">
         <h3>Endpoint: /trips</h3>
-        <p>Este endpoint proporciona información sobre los viajes individuales realizados por los vehículos de transporte en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en los viajes de transporte.</p>
+        <p>Este endpoint proporciona información sobre los viajes individuales realizados por los vehículos de transporte en Santo Domingo.</p>
         <p>Metodo: <strong>GET</strong></p>
-        <p>Parámetros: Ninguno</p>
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un viaje y contiene detalles como el ID del viaje, el ID de la ruta, el ID del servicio y más.</p>
       </div>
   </div>
@@ -450,7 +449,7 @@ fetch('https://gtfs-restapi-production.up.railway.app/trips')
         </div>
     </div>
     <div class="col-md-3 d-flex align-items-center justify-content-center">
-        <img src="pics/doc-images/trips.png" alt="routes" class="img-fluid custom-img">
+        <img src="pics/doc-images/trips.png" alt="routes" class="img-fluid custom-img" draggable="false">
     </div>
 </div>
 
@@ -479,9 +478,8 @@ fetch('https://gtfs-restapi-production.up.railway.app/calendar')
       </div>
       <div class="col-md-4" style="text-align:justify;">
         <h3>Endpoint: /calendar</h3>
-        <p>Este endpoint proporciona información sobre los horarios de operación del servicio de transporte en Santo Domingo. Los datos están en formato GTFS y se actualizan regularmente para reflejar los cambios en los horarios de operación.</p>
+        <p>Este endpoint proporciona información sobre los horarios de operación del servicio de transporte en Santo Domingo.</p>
         <p>Metodo: <strong>GET</strong></p>
-        <p>Parámetros: Ninguno</p>
         <p>Respuesta: Un arreglo de objetos, donde cada objeto representa un día en el calendario del servicio de transporte y contiene detalles como la fecha, si el servicio está disponible y más.</p>
       </div>
   </div>
@@ -501,7 +499,7 @@ true,"start_date":"2023-01-01T00:00:00.000Z",
         </div>
     </div>
     <div class="col-md-3 d-flex align-items-center justify-content-center">
-        <img src="pics/doc-images/calendar.png" alt="routes" class="img-fluid custom-img">
+        <img src="pics/doc-images/calendar.png" alt="routes" class="img-fluid custom-img" draggable="false">
     </div>
 </div>
 
@@ -525,7 +523,13 @@ true,"start_date":"2023-01-01T00:00:00.000Z",
   <div class="row align-items-start mt-5">
       <div class="col">
           <h2>Casos de uso</h2>
-          <p>Nuestra API puede ser de gran utilidad para desarrolladores y empresas que trabajen en el desarrollo de aplicaciones de transporte, análisis de rutas, o cualquier proyecto que requiera de datos precisos y actualizados del sistema de transporte público de Santo Domingo.</p>
+          <p>Nuestra API puede ser de gran utilidad para desarrolladores y empresas que trabajen en el desarrollo de aplicaciones de transporte, análisis de rutas, o cualquier proyecto que requiera de datos precisos y actualizados del sistema de transporte público de Santo Domingo. Tal y como mostramos en los siguientes puntos.</p>
+          <ol>
+            <li><strong>Optimización de Rutas Inteligentes:</strong> Utiliza nuestros datos en tiempo real para desarrollar algoritmos de optimización de rutas avanzados. Ayuda a las flotas de carros públicos a planificar rutas eficientes en función del tráfico actual, reduciendo los tiempos de espera y mejorando la experiencia de los pasajeros.</li>
+            <li><strong>Análisis Predictivo del Flujo de Pasajeros:</strong> Aprovecha los datos históricos y en tiempo real para predecir la demanda de pasajeros en diferentes rutas y horarios. Esto permite a las empresas de transporte ajustar sus operaciones según las tendencias de demanda, asignando recursos de manera óptima y mejorando la satisfacción del usuario.</li>
+            <li><strong>Plataforma de Información Multimodal:</strong> Crea una aplicación que integre datos de diferentes modos de transporte, como carros públicos, metro, autobuses y más. Ofrece a los usuarios opciones de viaje completas y coherentes, facilitando la planificación de rutas y fomentando el uso de transportes públicos en la ciudad.</li>
+            </ol>
+            Estos casos de uso pueden transformar la forma en que se aborda el transporte público en Santo Domingo y brindar soluciones innovadoras a los desafíos actuales del sistema de transporte.
       </div>
   </div>
 </div>
@@ -556,68 +560,68 @@ true,"start_date":"2023-01-01T00:00:00.000Z",
 
 <section id="seccion-contacto" class="d-flex flex-column justify-content-between border-bottom border-2">
   <div class="row justify-content-center">
-      <div class="col-12 col-sm-10 col-md-8 col-lg-12">
-          <div class="container" id="contenedor-formulario">
-              <div class="text-center mb-4" id="titulo-formulario">
-                  <h2 class="text-white">Contact Us</h2>
-              </div>
-              <form
-                  action="https://formspree.io/f/maygqdjr"
-                  method="POST"
-              >
-                  <div class="mb-3">
-                      <label for="email">Email</label>
-                      <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          name="email"
-                          placeholder="name@example.com"
-                          required
-                      />
-                  </div>
-
-                  <div class="mb-3">
-                      <label for="name">Name</label>
-                      <input
-                          type="input"
-                          class="form-control"
-                          id="name"
-                          name="name"
-                          placeholder="Juan Perez"
-                      />
-                  </div>
-
-                  <div class="mb-3">
-                      <label for="phone">Phone</label>
-                      <input
-                          type="tel"
-                          class="form-control"
-                          name="phone"
-                          id="phone"
-                          placeholder="Phone"
-                      />
-                  </div>
-
-                  <div class="mb-3">
-                      <label for="message">Message</label>
-                      <textarea
-                          class="form-control"
-                          name="message"
-                          id="message"
-                          rows="4"
-                          placeholder="Tell us how we can help you"
-                      ></textarea>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary w-100 fs-5">
-                      Send
-                  </button>
-              </form>
+    <div class="col-12 col-sm-10 col-md-8 col-lg-12">
+      <div class="container" id="contenedor-formulario">
+        <div class="text-center mb-4" id="titulo-formulario">
+          <h2 class="text-white">Contactanos</h2>
+        </div>
+        <form action="https://formspree.io/f/maygqdjr" method="POST">
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="someone@example.com"
+              required
+            />
           </div>
+
+          <div class="mb-3">
+            <label for="name">Nombre</label>
+            <input
+              type="text" 
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Juan Perini Feikini"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="phone">Teléfono</label>
+            <input
+              type="tel"
+              class="form-control"
+              name="phone"
+              id="phone"
+              placeholder="xxx-xxx-xxxx"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="message">Mensaje</label>
+            <textarea
+              class="form-control"
+              name="message"
+              id="message"
+              rows="4"
+              placeholder="Cuentanos como podemos ayudarte"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 fs-5">
+            Enviar
+          </button>
+        </form>
       </div>
+    </div>
   </div>
 </section>
+
 
 
 <!--========================================================== -->
@@ -626,7 +630,7 @@ true,"start_date":"2023-01-01T00:00:00.000Z",
 
 
 <footer class="w-100 d-flex align-items-center justify-content-center flex-wrap">
-  <p class="fs-5 px-3  pt-3 secondary-title">WayFinder. &copy; All Rights Reserved 2021</p>
+  <p class="fs-5 px-3  pt-3 secondary-title">WayFinder. &copy; All Rights Reserved 2023</p>
   <div id="iconos" >
   <a href="https://github.com/sniperwolf27/Proyecto-de-Grado"><i class="bi bi-github"></i></a> 
   </div>
